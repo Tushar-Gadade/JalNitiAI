@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment: { POSTGRES_USER: jalniti, POSTGRES_PASSWORD: jalniti, POSTGRES_DB: jalniti }
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U jalniti"], interval: 5s, retries: 10 }
+  ai:
+    build: ./intelligence-service
+    volumes: ["./data:/srv/data"]
+    ports: ["8000:8000"]
+  backend:
+    build: ./backend
+    environment:
+      PORT: 4000
+      DATABASE_URL: postgres://jalniti:jalniti@db:5432/jalniti
+      AI_SERVICE_URL: http://ai:8000
+      JWT_SECRET: ${JWT_SECRET:-change-me-please}
+      OPERATOR_USER: operator
+      OPERATOR_PASS: ${OPERATOR_PASS:-Jalniti@2026}
+      ADMIN_USER: admin
+      ADMIN_PASS: ${ADMIN_PASS:-Admin@2026}
+      CORS_ORIGIN: http://localhost:5173,http://localhost:8080
+    depends_on: { db: { condition: service_healthy } }
+    ports: ["4000:4000"]
+  frontend:
+    build: ./frontend
+    depends_on: [backend]
+    ports: ["8080:80"]
+volumes: { pgdata: {} }

@@ -1,0 +1,64 @@
+{
+  "planning_scenarios": [
+    {
+      "name": "Normal",
+      "params": {}
+    },
+    {
+      "name": "Heatwave (+12% demand)",
+      "params": {
+        "demand_growth": 0.12,
+        "temp_offset": 4
+      }
+    },
+    {
+      "name": "Delayed NE monsoon (no inflow)",
+      "params": {
+        "inflow_factor": 0.0,
+        "demand_growth": 0.05
+      }
+    },
+    {
+      "name": "Pipe outage (Velachery route at 40%)",
+      "params": {
+        "outages": {
+          "6": 0.4
+        }
+      }
+    },
+    {
+      "name": "Severe drought (storage -30%)",
+      "params": {
+        "storage_factor": 0.7,
+        "inflow_factor": 0.0,
+        "demand_growth": 0.08
+      }
+    }
+  ],
+  "evaluation_presets": {
+    "normal": {
+      "cover": 1.0,
+      "growth": 0.0,
+      "inflow_true": 1.0,
+      "label": "Normal pre-monsoon drawdown, normal demand"
+    },
+    "heatwave": {
+      "cover": 0.97,
+      "growth": 0.12,
+      "inflow_true": 1.0,
+      "label": "Heatwave demand surge (+12%)"
+    },
+    "delayed_monsoon": {
+      "cover": 0.95,
+      "growth": 0.05,
+      "inflow_true": 0.0,
+      "label": "Delayed NE monsoon: forecast inflow never arrives"
+    },
+    "severe_drought": {
+      "cover": 0.85,
+      "growth": 0.08,
+      "inflow_true": 0.0,
+      "label": "Multi-day severe drought"
+    }
+  }
+}

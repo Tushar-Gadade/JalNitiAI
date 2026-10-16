@@ -1,0 +1,20 @@
+{
+  "seasonal_naive": {
+    "mae_mld": 1.9976212121212118,
+    "rmse_mld": 2.860635948579097,
+    "mape_pct": 4.041545614796559
+  },
+  "ridge": {
+    "mae_mld": 1.6449568474294163,
+    "rmse_mld": 2.315303912743917,
+    "mape_pct": 3.330857427623087
+  },
+  "gradient_boosting": {
+    "mae_mld": 1.305286713097896,
+    "rmse_mld": 1.754188570008032,
+    "mape_pct": 2.5861116580383503,
+    "interval_coverage_80": 0.793939393939394
+  },
+  "holdout_days": 60,
+  "data_note": "Metrics computed on SYNTHETIC demand - tests pipeline, not real-world accuracy"
+}

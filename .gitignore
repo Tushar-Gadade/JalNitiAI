@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+__pycache__/
+*.pyc
+intelligence-service/models/*.joblib
+.pytest_cache/

@@ -1,0 +1,51 @@
+/* Government of India "new theme" inspired tokens (GIGW-style): navy, saffron/white/green tricolour accents, Noto Sans */
+:root{--navy:#12306b;--navy-d:#0b2150;--blue:#0b4fb3;--saffron:#ff9933;--green:#138808;--bg:#f3f5f9;--card:#fff;--line:#cfd6e3;--text:#1b1f2a;--muted:#4b5565;
+--s0:#138808;--s1:#8ab800;--s2:#e6b400;--s3:#f08a00;--s4:#d32f2f;--s5:#8e1b1b;--focus:#ffbf47;--fs:16px}
+:root.hc{--bg:#000;--card:#000;--line:#fff;--text:#fff;--muted:#ffeb3b;--navy:#000;--navy-d:#000;--blue:#7fdbff}
+*{box-sizing:border-box}html{font-size:var(--fs)}
+body{margin:0;font-family:'Noto Sans','Noto Sans Devanagari',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{color:var(--blue)}:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 12px;z-index:99}.skip:focus{left:8px}
+.util{background:#e9edf5;border-bottom:1px solid var(--line);font-size:.8rem}
+.util .in,.hdr .in,.nav .in,main,.foot .in{max-width:1280px;margin:0 auto;padding:0 20px}
+.util .in{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;min-height:32px}
+.util button{background:#fff;border:1px solid var(--line);margin-left:4px;padding:1px 8px;cursor:pointer;font:inherit;border-radius:2px}
+.tri{height:5px;background:linear-gradient(90deg,var(--saffron) 33.3%,#fff 33.3% 66.6%,var(--green) 66.6%);border-bottom:1px solid var(--line)}
+.hdr{background:var(--card);border-bottom:1px solid var(--line)}
+.hdr .in{display:flex;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.mark{width:52px;height:52px;border-radius:50%;background:var(--navy);display:grid;place-items:center;flex:none;border:3px solid var(--saffron)}
+.hdr h1{margin:0;font-size:1.45rem;color:var(--navy);line-height:1.15}.hdr h1 span{font-family:'Noto Sans Devanagari';margin-right:8px}
+.hdr p{margin:2px 0 0;color:var(--muted);font-size:.85rem}.hdr .right{margin-left:auto;text-align:right;font-size:.85rem}
+.nav{background:var(--navy)}.nav .in{display:flex;gap:2px;flex-wrap:wrap;padding-top:0;padding-bottom:0}
+.nav a{color:#fff;text-decoration:none;padding:11px 14px;font-size:.92rem;font-weight:500;border-bottom:3px solid transparent}
+.nav a:hover{background:var(--navy-d)}.nav a.active{border-bottom-color:var(--saffron);background:var(--navy-d)}
+main{padding-top:22px;padding-bottom:40px}
+h2.pt{margin:0 0 4px;color:var(--navy);font-size:1.35rem;font-weight:700}.sub{margin:0 0 18px;color:var(--muted);max-width:75ch}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--navy);padding:16px 18px;margin-bottom:18px}
+.card h3{margin:0 0 10px;font-size:1.05rem;color:var(--navy)}
+.grid{display:grid;gap:16px}.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.g2{grid-template-columns:repeat(auto-fit,minmax(380px,1fr))}
+.kpi{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--navy);padding:12px 14px}
+.kpi b{display:block;font-size:1.65rem;color:var(--navy);line-height:1.2}.kpi span{font-size:.82rem;color:var(--muted)}
+.kpi.warn{border-left-color:var(--s3)}.kpi.bad{border-left-color:var(--s4)}.kpi.good{border-left-color:var(--green)}
+table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#e6ebf5;color:var(--navy);font-weight:600}td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tw{overflow-x:auto}
+.btn{background:var(--navy);color:#fff;border:1px solid var(--navy);padding:8px 16px;font:inherit;font-weight:600;cursor:pointer;border-radius:2px}
+.btn:hover{background:var(--navy-d)}.btn.alt{background:#fff;color:var(--navy)}.btn.go{background:var(--green);border-color:var(--green)}.btn.stop{background:#b3261e;border-color:#b3261e}
+.btn:disabled{opacity:.55;cursor:wait}
+input,select,textarea{font:inherit;padding:7px 9px;border:1px solid #7c879b;border-radius:2px;background:#fff;color:#000;max-width:100%}
+label{display:block;font-size:.85rem;font-weight:600;margin-bottom:3px}.fld{margin-bottom:12px}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+.badge{display:inline-block;padding:1px 8px;font-size:.75rem;font-weight:600;color:#fff;border-radius:2px;white-space:nowrap}
+.st0{background:var(--s0)}.st1{background:var(--s1);color:#111}.st2{background:var(--s2);color:#111}.st3{background:var(--s3)}.st4{background:var(--s4)}.st5{background:var(--s5)}
+.pass{background:var(--green)}.warn{background:var(--s3)}.fail{background:var(--s4)}
+.zones{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.zt{border:1px solid var(--line);border-left:8px solid;padding:8px 10px;background:#fff;color:#111;text-align:left;cursor:pointer;font:inherit}
+.zt.prot{outline:3px solid #1f6fe5;outline-offset:-3px}.zt small{display:block;color:#444}.zt b{font-size:.88rem}
+.msg{padding:10px 14px;border:1px solid;margin-bottom:14px;font-size:.9rem}.msg.err{background:#fdecea;border-color:#b3261e;color:#7a1710}.msg.ok{background:#e7f4e4;border-color:var(--green);color:#0d4d05}.msg.info{background:#e8effa;border-color:var(--blue);color:#0b2a5b}
+.bar{background:#e3e8f1;height:10px;min-width:80px;position:relative}.bar i{position:absolute;inset:0 auto 0 0;background:var(--navy)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.8rem;margin:8px 0}.legend span:before{content:'';display:inline-block;width:12px;height:12px;margin-right:5px;vertical-align:-1px;background:var(--c)}
+.foot{background:var(--navy-d);color:#dfe7f5;font-size:.82rem;padding:16px 0;margin-top:20px}.foot .in{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap}
+.login{max-width:420px;margin:50px auto}
+code.eq{display:block;background:#eef2f9;border-left:4px solid var(--saffron);padding:8px 12px;margin:8px 0;overflow-x:auto}
+@media (max-width:640px){.g2{grid-template-columns:1fr}.hdr .right{margin-left:0;text-align:left}}
+@media (prefers-reduced-motion:no-preference){.zt{transition:box-shadow .15s}.zt:hover{box-shadow:0 2px 6px rgba(0,0,0,.25)}}
